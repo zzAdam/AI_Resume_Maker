@@ -1,0 +1,32 @@
+TikTok is the leading destination for short-form mobile video. Our mission is to inspire creativity and bring joy. TikTok has global offices including Los Angeles, New York, London, Paris, Berlin, Dubai, Singapore, Jakarta, Seoul and Tokyo. 
+
+Why Join Us
+Creation is the core of TikTok's purpose. Our platform is built to help imaginations thrive. This is doubly true of the teams that make TikTok possible. 
+Together, we inspire creativity and bring joy - a mission we all believe in and aim towards achieving every day. 
+To us, every challenge, no matter how difficult, is an opportunity; to learn, to innovate, and to grow as one team. Status quo? Never. Courage? Always. 
+At TikTok, we create together and grow together. That's how we drive impact - for ourselves, our company, and the communities we serve. 
+Join us.
+
+The Business Risk Integrated Control (BRIC) team is missioned to: 
+- Protect ByteDance users, including and beyond content consumers, creators, advertisers;
+- Secure platform health and community experience authenticity;
+- Build infrastructures, platforms and technologies, as well as to collaborate with many cross-functional teams and stakeholders.
+
+The BRIC team works to minimize the damage of inauthentic behaviors on ByteDance platforms (e.g. TikTok, CapCut, Resso, Lark), covering multiple classical and novel community and business risk areas such as account integrity, engagement authenticity, anti spam, API abuse, growth fraud, live streaming security and financial safety (ads or e-commerce), etc.
+
+In this team you'll have a unique opportunity to have first-hand exposure to the strategy of the company in key security initiatives, especially in building scalable and robust, intelligent and privacy-safe, secure and product-friendly systems and solutions. Our challenges are not some regular day-to-day technical puzzles -- You'll be part of a team that's developing novel solutions to first-seen challenges of a non-stop evolvement of a phenomenal product eco-system. The work needs to be fast, transferrable, while still down to the ground to making quick and solid differences.
+
+Responsibilities
+- Build machine learning solutions to respond to and mitigate business risks in ByteDance products/platforms. Such risks include and are not limited to abusive accounts, fake engagements, spammy redirection, scraping, fraud, etc.
+- Improve modeling infrastructures, labels, features and algorithms towards robustness, automation and generalization, reduce modeling and operational load on risk adversaries and new product/risk ramping-ups.
+- Uplevel risk machine learning excellence on privacy/compliance, interpretability, risk perception and analysis. 
+
+Qualifications
+
+ - Bachelor or above degree in computer science, statistics, or other relevant, machine-learning-heavy majors.
+- Solid engineering skills. Proficiency in at least two of: Linux, Hadoop, Hive, Spark, Storm.
+- Strong machine learning background. Proficiency or publications in modern machine learning theories and applications such as deep neural nets, transfer/multi-task learning, reinforcement learning, time series or graph unsupervised learning.
+- Ability to think critically, objectively, rationally. Reason and communicate in result-oriented, data-driven manner. High autonomy.
+- Minimum 3 - 5 years relevant work experience from a large-scale internet business
+
+TikTok is committed to creating an inclusive space where employees are valued for their skills, experiences, and unique perspectives. Our platform connects people from across the globe and so does our workplace. At TikTok, our mission is to inspire creativity and bring joy. To achieve that goal, we are committed to celebrating our diverse voices and to creating an environment that reflects the many communities we reach. We are passionate about this and hope you are too.

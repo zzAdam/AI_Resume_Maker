@@ -1,17 +1,27 @@
 import os
 import subprocess
-import openai
+from openai import OpenAI
 from dotenv import load_dotenv
+import fitz 
+
 
 # Load environment variables and set API key
 load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
+
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
 
 def get_job_application_details():
     job_title = input("Enter the job title: ")
     company = input("Enter the company name: ")
-    job_description = input("Enter the job description: ")
+    
+    # Read the job description from a file instead of user input
+    with open('job_description.txt', 'r') as file:
+        job_description = file.read()
+    
     return job_title, company, job_description
+  
 
 def generate_resume_content(job_title, company, job_description, resume_info, template_content):
     prompt_text = f"""
@@ -26,13 +36,16 @@ def generate_resume_content(job_title, company, job_description, resume_info, te
 
     Generate a professional LaTeX resume document that covers exactly one full page, incorporating the customized resume content, adhering to the format specified in the provided template. The goal is to highlight why the applicant is an excellent match for this job at this company, based on the information provided.
     """
-    response = openai.Completion.create(
-        model="gpt-4",
-        prompt=prompt_text,
-        temperature=0.5,
-        max_tokens=1024
-    )
-    return response.choices[0].text
+    response = client.chat.completions.create(model="gpt-4",
+    messages=[{
+        "role": "system",
+        "content": "You are a highly skilled AI, trained to assist with creating professional resumes."
+    }, {
+        "role": "user",
+        "content": prompt_text
+    }])
+    return response.choices[0].message.content
+
 
 def update_latex_template_with_resume(content, output_path="resume.tex"):
     with open(output_path, 'w') as file:
@@ -46,6 +59,10 @@ def compile_latex_to_pdf(latex_file="resume.tex"):
 def main():
     # Load your initial resume info and LaTeX template from files or as predefined strings
     # For example, read them from files (you could also directly insert the content as string variables)
+    
+    pdf_path = "Initial_resume.pdf"
+    txt_path = "Initial_resume.txt"
+    pdf_to_text(pdf_path, txt_path)
     with open('Initial_resume.txt', 'r') as file:  # Assuming you have converted your PDF to text and saved it as Initial_resume.txt
         resume_info = file.read()
     with open('template.tex', 'r') as file:
@@ -55,6 +72,21 @@ def main():
     resume_content = generate_resume_content(job_title, company, job_description, resume_info, template_content)
     update_latex_template_with_resume(resume_content)
     compile_latex_to_pdf()
+
+def pdf_to_text(pdf_path, txt_path):
+    # Open the PDF file
+    with fitz.open(pdf_path) as doc:
+        text = ""
+        # Iterate through each page of the PDF
+        for page in doc:
+            # Extract text from the current page
+            text += page.get_text()
+        
+        # Save the extracted text to a .txt file
+        with open(txt_path, "w") as txt_file:
+            txt_file.write(text)
+
+
 
 if __name__ == "__main__":
     main()
