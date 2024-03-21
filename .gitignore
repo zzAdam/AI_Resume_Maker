@@ -2,4 +2,5 @@ node_modules/
 .env
 .venv/
 *.log
+Initial_resume.pdf
 
