@@ -2,14 +2,13 @@ import os
 import subprocess
 from openai import OpenAI
 from dotenv import load_dotenv
+
+load_dotenv()
+client = OpenAI()
 import fitz 
 
-
-# Load environment variables and set API key
-load_dotenv()
-
-
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+#load_dotenv()
+#client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 def get_job_application_details():
@@ -21,7 +20,6 @@ def get_job_application_details():
         job_description = file.read()
     
     return job_title, company, job_description
-  
 
 def generate_resume_content(job_title, company, job_description, resume_info, template_content):
     prompt_text = f"""
@@ -34,17 +32,20 @@ def generate_resume_content(job_title, company, job_description, resume_info, te
     - **LaTeX Resume Template:**
     {template_content}
 
-    Generate a professional LaTeX resume document that covers exactly one full page, incorporating the customized resume content, adhering to the format specified in the provided template. The goal is to highlight why the applicant is an excellent match for this job at this company, based on the information provided.
+    Generate a professional LaTeX resume document that covers exactly one full page, incorporating the customized resume content, adhering to the format specified in the provided template. The goal is to highlight why the applicant is an excellent match for this job at this company, based on the information provided. 
     """
-    response = client.chat.completions.create(model="gpt-4",
-    messages=[{
-        "role": "system",
-        "content": "You are a highly skilled AI, trained to assist with creating professional resumes."
-    }, {
-        "role": "user",
-        "content": prompt_text
-    }])
+    response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=[
+            {"role": "system","content": "You are a highly skilled AI, trained to assist with creating professional resumes. You can only return Latex code, without anything else"},
+            {"role": "user", "content": prompt_text}
+        ]
+    )
+    
+    
+    #return latex_code
     return response.choices[0].message.content
+
 
 
 def update_latex_template_with_resume(content, output_path="resume.tex"):
@@ -71,7 +72,7 @@ def main():
     job_title, company, job_description = get_job_application_details()
     resume_content = generate_resume_content(job_title, company, job_description, resume_info, template_content)
     update_latex_template_with_resume(resume_content)
-    compile_latex_to_pdf()
+    #compile_latex_to_pdf()
 
 def pdf_to_text(pdf_path, txt_path):
     # Open the PDF file
