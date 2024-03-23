@@ -2,24 +2,29 @@ import os
 import subprocess
 from openai import OpenAI
 from dotenv import load_dotenv
+import fitz  # PyMuPDF
+from pdflatex import PDFLaTeX
 
 load_dotenv()
 client = OpenAI()
-import fitz 
-
-#load_dotenv()
-#client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-
 
 def get_job_application_details():
     job_title = input("Enter the job title: ")
     company = input("Enter the company name: ")
-    
-    # Read the job description from a file instead of user input
     with open('job_description.txt', 'r') as file:
         job_description = file.read()
-    
     return job_title, company, job_description
+
+def clean_latex_response(latex_response):
+    # Define the start and end delimiters for Markdown code blocks
+    start_delimiter = "```latex"
+    end_delimiter = "```"
+
+    # Remove the delimiters
+    cleaned_response = latex_response.replace(start_delimiter, "").replace(end_delimiter, "")
+
+    return cleaned_response.strip()
+
 
 def generate_resume_content(job_title, company, job_description, resume_info, template_content):
     prompt_text = f"""
@@ -43,8 +48,8 @@ def generate_resume_content(job_title, company, job_description, resume_info, te
     )
     
     
-    #return latex_code
-    return response.choices[0].message.content
+    latex_code = clean_latex_response(response.choices[0].message.content)
+    return latex_code
 
 
 
@@ -52,19 +57,25 @@ def update_latex_template_with_resume(content, output_path="resume.tex"):
     with open(output_path, 'w') as file:
         file.write(content)
 
-def compile_latex_to_pdf(latex_file="resume.tex"):
-    command = ["pdflatex", "-interaction=nonstopmode", latex_file]
-    subprocess.run(command, check=True)
+def compile_latex_to_pdf(latex_file='resume.tex'):
+    pdfl = PDFLaTeX.from_texfile(latex_file)
+    pdf, log, completed_process = pdfl.create_pdf(keep_pdf_file=True, keep_log_file=True)
     print("PDF compilation complete.")
 
+def pdf_to_text(pdf_path, txt_path):
+    with fitz.open(pdf_path) as doc:
+        text = ""
+        for page in doc:
+            text += page.get_text()
+        with open(txt_path, "w") as txt_file:
+            txt_file.write(text)
+
 def main():
-    # Load your initial resume info and LaTeX template from files or as predefined strings
-    # For example, read them from files (you could also directly insert the content as string variables)
-    
     pdf_path = "Initial_resume.pdf"
     txt_path = "Initial_resume.txt"
     pdf_to_text(pdf_path, txt_path)
-    with open('Initial_resume.txt', 'r') as file:  # Assuming you have converted your PDF to text and saved it as Initial_resume.txt
+    
+    with open('Initial_resume.txt', 'r') as file:
         resume_info = file.read()
     with open('template.tex', 'r') as file:
         template_content = file.read()
@@ -72,22 +83,7 @@ def main():
     job_title, company, job_description = get_job_application_details()
     resume_content = generate_resume_content(job_title, company, job_description, resume_info, template_content)
     update_latex_template_with_resume(resume_content)
-    #compile_latex_to_pdf()
-
-def pdf_to_text(pdf_path, txt_path):
-    # Open the PDF file
-    with fitz.open(pdf_path) as doc:
-        text = ""
-        # Iterate through each page of the PDF
-        for page in doc:
-            # Extract text from the current page
-            text += page.get_text()
-        
-        # Save the extracted text to a .txt file
-        with open(txt_path, "w") as txt_file:
-            txt_file.write(text)
-
-
+    compile_latex_to_pdf('resume.tex')
 
 if __name__ == "__main__":
     main()
