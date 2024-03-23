@@ -5,11 +5,13 @@
  +33 7 82 13 55 94 
  amedragh@gmail.com 
  linkedin.com/in/adam-medragh 
+https://github.com/zzAdam
+
  TECHNICAL SKILLS 
  OS 
  Ubuntu・Kali・Windows・MacOS 
  
- Artiﬁcial Intelligence 
+ Artificial Intelligence 
  Tensorﬂow・Pandas・Scikit-Learn・ 
  OpenCV・PyTorch・Flower 
  
@@ -24,6 +26,7 @@
  Tools 
  Git・VSCode・Docker・AWS Services 
  ・Agile methodology 
+
  CERTIFICATIONS 
  -  CEFR Level: C1, 985/990,  TOEIC 
  -  Neural  Networks  and  Deep  Learning 
@@ -31,12 +34,14 @@
  -  Intro  to  TensorFlow  for  AI,  ML,  and 
  Deep Learning,  DeepLearning.AI 
  - What is Data Science?  IBM 
+
  LANGUAGES 
- English:  Native 
+ English: Native 
  French:  Native 
  German:  Conversant - B1 
  Arabic:  Basic  Knowledge  (Reading 
- & Writing) 
+ & Writing)
+
  AWARDS 
  & 
  COMMUNITY 
@@ -58,6 +63,8 @@
  Development  of  a  cybersecurity  framework  based  on  Machine  Learning  for  authentication  and  intrusion 
  detection  for  international  clients.  Design  of  models  for  automatic  vulnerability  analysis  and  improved 
  anomaly detection. Successful integration of these models into production. 
+
+ 
  Python・TensorFlow・RESTful API・Socket Programming・Federated Learning 
  Deep Learning Engineering Internship,  Nuclétudes,  ArianeGroup 
  Apr. 2023 - Aug. 2023 
