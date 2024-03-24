@@ -14,16 +14,13 @@ def clean_latex_response(latex_response):
 def generate_resume_content(job_title, company, job_description, resume_info, template_content):
     prompt_text = f"""
 
-Given the job title "{job_title}", the company "{company}", and a comprehensive job description, utilize the provided standard resume content and a LaTeX template to generate a customized resume. This resume must:
+Given the job title "{job_title}", the company "{company}", and a comprehensive job description, utilize the provided standard resume content and a LaTeX template to generate a customized resume that:
 
-Showcase skills and experiences most relevant to the job and company, aligning with the job description's requirements and preferences.
-Prioritize information that emphasizes the applicant's suitability for the role, focusing on:
-Technical skills and relevant projects.
-Professional experiences, with a preference for internships over personal projects when space is limited.
-Education details, which must always be included, along with any notable certifications.
-Be exactly one page, efficiently utilizing space to include as much relevant information as possible, with slight modifications to the template's spacing allowed for fitting content.
+Emphasizes skills and experiences crucial to the specified job and company, aligning with the job description's requirements.
+Prioritizes educational details, technical skills, relevant projects (focusing on internships over personal projects for space efficiency), certifications, and languages.
+Adjusts the template as necessary to fit all content succinctly onto one page ( or less) without compromising readability and visual appeal.
+Presents the applicant as the perfect match for the role, considering the job offer, company culture, and specific demands within the tech industry.
 Variables:
-
 Job Title: {job_title}
 Company: {company}
 Job Description: {job_description}
