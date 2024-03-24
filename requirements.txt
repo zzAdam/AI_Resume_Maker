@@ -1,0 +1,5 @@
+PyMuPDF
+pdflatex
+openai
+python-dotenv 
+tk
