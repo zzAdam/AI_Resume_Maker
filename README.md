@@ -45,7 +45,7 @@ AIAutoResume is a Python-based application designed to automatically generate ta
 
 Before using AIAutoResume, you must set up a few configurations:
 
-- **OpenAI API Key**: Obtain an API key from [OpenAI](https://openai.com/). This key is required to interact with OpenAI's GPT models for generating the resume content.
+- **OpenAI API Key**: Obtain an API key from [OpenAI](https://openai.com/api-keys/). This key is required to interact with OpenAI's GPT models for generating the resume content.
 - **.env File**: Create a `.env` file in the root directory of the project and add your OpenAI API key as follows:
 
     ```
