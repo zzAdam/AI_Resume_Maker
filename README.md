@@ -49,7 +49,7 @@ Before using AIAutoResume, you must set up a few configurations:
 - **.env File**: Create a `.env` file in the root directory of the project and add your OpenAI API key as follows:
 
     ```
-OPENAI_API_KEY=your_api_key_here
+    OPENAI_API_KEY=your_api_key_here
     ```
 
 This file is already included in the `.gitignore` to ensure your API key remains private.
@@ -60,7 +60,6 @@ To start AIAutoResume, run the `main.py` script from your terminal or command pr
 
   ```
 python src/main.py
-
   ```
 
 
@@ -83,7 +82,7 @@ Contributions to AIAutoResume are welcome! If you have suggestions for improveme
 
 ## License
 
-Specify your project's license here, indicating how others can use or contribute to your project.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
