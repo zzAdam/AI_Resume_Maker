@@ -84,10 +84,13 @@ https://github.com/zzAdam
  French National Student Entrepreneur Status,  PÉPITE  Centre Val de Loire 
  Since Nov. 2022 
  EDUCATION 
+
  Exchange Program specialized in AI  —  University POLITEHNICA  of Bucharest, Romania 
  Ranked No.1 among Romanian Universities 
  Sep. 2022 - Feb. 2023 
  Notable Courses:  Machine Learning, Neural networks,  Computer Vision, Big Data 
+
+
  Master of Science in IT, minor in AI & Cybersecurity —  INSA Centre-Val de Loire 
  Sep. 2021 - Now 
  Notable courses: 
@@ -95,6 +98,9 @@ https://github.com/zzAdam
  o Advanced design and object programming –  Python,  SQL, Java, C 
  o Web application design -  HTML, CSS, Javascript 
  o Algorithm and reasoning -  Graph Theory, Network  Theory 
+
+
+ 
  Intensive Preparatory Courses —  Lycée Buﬀon, Paris 
  Sep. 2018 - Jul. 2021 
  Post  A-level  intense  study  course  in  Mathematics  &  Physics  for  the  competitive  entrance  examinations  to  the 

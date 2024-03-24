@@ -18,7 +18,7 @@ Given the job title "{job_title}", the company "{company}", and a comprehensive 
 
 Emphasizes skills and experiences crucial to the specified job and company, aligning with the job description's requirements.
 Prioritizes educational details, technical skills, relevant projects (focusing on internships over personal projects for space efficiency), certifications, and languages.
-Adjusts the template as necessary to fit all content succinctly onto one page ( or less) without compromising readability and visual appeal.
+Adjusts the template as necessary to fit all content succinctly onto approximately one page without compromising readability and visual appeal.
 Presents the applicant as the perfect match for the role, considering the job offer, company culture, and specific demands within the tech industry.
 Variables:
 Job Title: {job_title}
@@ -26,6 +26,7 @@ Company: {company}
 Job Description: {job_description}
 Standard Resume Content: {resume_info}
 LaTeX Resume Template: {template_content}
+Languages and certifications (if existing) must always be in the skills.
 Generate a professional LaTeX resume document, ensuring it is precisely tailored to demonstrate why the applicant is an excellent match for the job at this specific company. The content should be arranged to reflect the priorities based on the job offer, the company's profile, and the role's demands within the tech domain.
     """
     response = client.chat.completions.create(
