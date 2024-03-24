@@ -14,35 +14,31 @@ AIAutoResume is a Python-based application designed to automatically generate ta
 ## Installation
 
 1. **Clone the repository**:
-
-  ```
-git clone https://github.com/zzAdam/AI_Resume_Maker.git
-  ```
+    ```
+    git clone https://github.com/zzAdam/AI_Resume_Maker.git
+    ```
 
 2. **Navigate to the project directory**:
-
-
-  ```
-cd AIAutoResume
-  ```
+    ```
+    cd AIAutoResume
+    ```
 
 3. **Create and activate a virtual environment** (optional but recommended):
-- On macOS/Linux:
-  ```
-  python3 -m venv .venv
-  source .venv/bin/activate
-  ```
-- On Windows:
-  ```
-  python -m venv .venv
-  .\.venv\Scripts\activate
-  ```
+   - On macOS/Linux:
+     ```
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
+   - On Windows:
+     ```
+     python -m venv .venv
+     .\.venv\Scripts\activate
+     ```
+
 4. **Install the required dependencies**:
-
-  ```
-pip install -r requirements.txt
-  ```
-
+    ```
+    pip install -r requirements.txt
+    ```
 
 
 ## Configuration
@@ -52,10 +48,9 @@ Before using AIAutoResume, you must set up a few configurations:
 - **OpenAI API Key**: Obtain an API key from [OpenAI](https://openai.com/). This key is required to interact with OpenAI's GPT models for generating the resume content.
 - **.env File**: Create a `.env` file in the root directory of the project and add your OpenAI API key as follows:
 
-
-  ```
+    ```
 OPENAI_API_KEY=your_api_key_here
-  ```
+    ```
 
 This file is already included in the `.gitignore` to ensure your API key remains private.
 
